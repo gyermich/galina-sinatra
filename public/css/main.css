@@ -69,6 +69,10 @@ overflow: hidden;
   float: right;
 }
 
+#post {
+  padding: 70px 20px 0 20px;
+}
+
 footer {
   background: #4A4A4A;
   padding: 1px;
