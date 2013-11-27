@@ -6,6 +6,7 @@
       </head>
       <body>
         <div class= 'header'>
+
           <div class= 'name'>Chunky Biscuit
           </div>
           <div class= 'nav'>
@@ -17,7 +18,13 @@
            </div>
         </div>
 
+        <div class= 'content'>
+          <% @posts.each do  |post| %>
+            <a href= "/blog/<%= post %>"><%= post %></a>
+          <% end %>
+          
         <%= yield %>
+      </div>
 
          <footer>
           <p>© 2013 Galina Yermicheva</p>
