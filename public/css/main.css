@@ -1,8 +1,7 @@
 body {
   margin: 0;
   font-family: Helvetica, "MS Trebuchet", sans-serif;
-  background: #D5D5D5; /*url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQauxJH-MTR7xVxNzwy5dit-XTaKCGrVUOF2koFwKwXh1yVhspu";*/
- /* background-repeat:repeat;*/
+  background: #D5D5D5; 
   text-align: justify;
 }
 
@@ -23,6 +22,7 @@ body {
   float: left;
 }
 
+/*Navigation menu*/
 .header .nav {
   text-align: right;
 }
@@ -40,14 +40,45 @@ ul li {
   border-radius: 3px;
 }
 
-.nav ul li a :visited {
-  color: #D5D5D5;
+.nav ul li a :hover {
+  color: black;
   text-decoration: none;
   margin: 0 5px;
   padding: 0 5px;
   border-radius: 3px;
+  background-color: #4A4A4A;
 }
 
+.nav-links li {
+  padding: 5px;
+}
+
+/*Dropdown Menu*/
+ul.dropdown {
+  display:none;
+  width: 200px;
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  top: 28px;
+  right: 5px;
+  background-color: #4A4A4A;
+}
+
+ul li:hover ul.dropdown {
+  display: inline-block;
+}
+
+ul.dropdown li {
+  display: block;
+  padding: 5px;
+}
+
+ul.dropdown li:hover {
+  background-color: black;
+}
+
+/*content*/
 .content {
   padding: 70px 20px 0 20px;
 }
@@ -67,10 +98,6 @@ overflow: hidden;
 .image {
   padding: 5px 10px 5px 10px;
   float: right;
-}
-
-#post {
-  /*padding: 70px 20px 0 20px;*/
 }
 
 footer {

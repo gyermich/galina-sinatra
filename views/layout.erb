@@ -1,33 +1,37 @@
 <!DOCTYPE html>
-    <html>
-      <head>
-        <link  href="/css/main.css" media="all" rel="stylesheet">
-        <title>Chunky Biscuit</title>
-      </head>
-      <body>
-        <div class= 'header'>
+<html>
+  <head>
+    <link  href="/css/main.css" media="all" rel="stylesheet">
+    <title>Chunky Biscuit</title>
+  </head>
 
-          <div class= 'name'>Chunky Biscuit
-          </div>
-          <div class= 'nav'>
-             <ul class= 'nav-links'>
-                <li><a href="/">Home</a></li>
-                <li><a href="/blog">Blog</a><li>
-                <li><a href="/contact">Contact</a></li>
-             </ul>
-           </div>
-        </div>
-
-        <div class= 'content'>
-          <% @posts.each do  |post| %>
-            <a href= "/blog/<%= post %>"><%= post %></a>
-          <% end %>
-          
-        <%= yield %>
+  <body>
+    <div class= 'header'>
+      <div class= 'name'>Chunky Biscuit
       </div>
+      <div class= 'nav'>
+         <ul class= 'nav-links'>
+            <li><a href="/">Home</a></li>
+            <li class= 'dropdown-link'>
+              <a href="/blog">Blog</a>
+              <ul class= 'dropdown'>
+                <% @sorted_posts.each do  |post, meta_data| %>
+                <li><a href= "/blog/<%= post %>"><%= post %></a></li>
+                <% end %>
+              </ul>
+            </li>
+            <li><a href="/contact">Contact</a></li>
+         </ul>
+       </div>
+    </div>
 
-         <footer>
-          <p>© 2013 Galina Yermicheva</p>
-         </footer>
-      </body>
-    </html>
+    <div class= 'content'>
+    <%= yield %>
+    </div>
+
+     <footer>
+      <p> 2013 Galina Yermicheva</p>
+     </footer>
+
+  </body>
+</html>

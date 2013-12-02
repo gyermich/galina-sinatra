@@ -2,10 +2,12 @@ require 'sinatra'
 require 'yaml'
 
 class MyApp < Sinatra::Base
+
   before do 
     @posts = Dir.glob("views/posts/*.erb").map do |post_name|
       post_name.split("/").last.slice(0..-5)
     end
+    @sorted_posts = meta_data.sort_by {|post, date| meta_data["date"]}.reverse
   end
 
   get "/" do
@@ -22,7 +24,7 @@ class MyApp < Sinatra::Base
     if @meta_data 
       @meta_data
     else
-       @meta_data = {}
+      @meta_data = {}
       @posts.each do |post|
         html = erb("posts/#{post}".to_sym, layout: false)
         meta = YAML.load(html.split("\n\n", 2).first)
@@ -30,6 +32,5 @@ class MyApp < Sinatra::Base
       end
       @meta_data
     end
-  end
-   
+  end  
 end
