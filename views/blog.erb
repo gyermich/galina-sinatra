@@ -1,0 +1,5 @@
+<ul class= 'post_list'>
+    <% @sorted_posts.each do  |post, meta_data| %>
+    <li><a href= "/blog/<%= post %>"><%= post %></a></li>
+    <% end %>
+</ul>

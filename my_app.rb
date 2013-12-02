@@ -14,6 +14,10 @@ class MyApp < Sinatra::Base
     erb :index
   end
 
+  get "/blog" do
+    erb :blog
+  end
+  
   get "/blog/:post_name" do
     html = erb("posts/#{params[:post_name]}".to_sym, layout: false)
     html = html.split("\n\n", 2).last

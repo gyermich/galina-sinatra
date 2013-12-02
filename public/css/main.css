@@ -108,3 +108,12 @@ footer {
   text-align: center;
   width: 100%;
 }
+
+/*Blog page*/
+.post_list li a {
+  display: block;
+  width: 20px;
+  margin: 0;
+  padding: 5px;
+  color: black;
+}
