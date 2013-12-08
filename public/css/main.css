@@ -126,3 +126,7 @@ footer img {
   padding: 5px;
   color: black;
 }
+
+#rubocop img {
+  width: 600px;
+}
