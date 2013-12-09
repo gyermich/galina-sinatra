@@ -84,8 +84,8 @@ ul.dropdown li:hover {
 }
 
 .container {
-margin: 0 auto;
-overflow: hidden;
+  margin: 0 auto;
+  overflow: hidden;
 }
 
 .box {
@@ -127,6 +127,7 @@ footer img {
   color: black;
 }
 
+/*Post page*/
 #rubocop img {
   width: 600px;
 }
